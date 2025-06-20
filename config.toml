@@ -1,0 +1,54 @@
+# Codex 配置文件 - Rust 版本
+# model = "openai/o4-mini"  # 或其他 OpenRouter 支持的模型
+# model_provider = "openrouter"
+# model = "doubao-seed-1-6-250615"
+# model_provider = "volcengine"
+# model = "qwen-plus-latest"
+# model_provider = "qwen"
+# model = "MiniMax-M1"
+# model_provider = "minimax"
+model = "kimi-k2-0711-preview"
+model_provider = "moonshot"
+approval_policy = "untrusted" # 文件修改需要确认
+
+# 定义 OpenRouter 提供商
+[model_providers.openrouter]
+name = "OpenRouter"
+base_url = "https://openrouter.ai/api/v1"
+env_key = "OPENROUTER_API_KEY"  # 从环境变量读取 API 密钥
+wire_api = "chat" 
+
+# 定义火山引擎提供商
+[model_providers.volcengine]
+name = "Volcengine"
+base_url = "https://ark.cn-beijing.volces.com/api/v3"
+env_key = "ARK_API_KEY"  # 从环境变量读取 API 密钥
+wire_api = "chat"
+
+# 定义阿里云通义千问提供商
+[model_providers.qwen]
+name = "Qwen"
+base_url = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+env_key = "DASHSCOPE_API_KEY"  # 从环境变量读取 API 密钥
+wire_api = "chat"
+
+# 定义 AIHubMix 提供商
+[model_providers.aihubmix]
+name = "AIHubMix"
+base_url = "https://aihubmix.com/v1"
+env_key = "AIHUBMIX_API_KEY"  # 从环境变量读取 API 密钥
+wire_api = "chat"
+
+# 定义 MoonShot 提供商
+[model_providers.moonshot]
+name = "MoonShot"
+base_url = "https://api.moonshot.cn/v1"
+env_key = "MOONSHOT_API_KEY"  # 从环境变量读取 API 密钥
+wire_api = "chat"
+
+# 定义 MiniMax 提供商
+[model_providers.minimax]
+name = "MiniMax"
+base_url = "https://api.minimaxi.com/v1"
+env_key = "MINIMAX_API_KEY"  # 从环境变量读取 API 密钥
+wire_api = "chat"
